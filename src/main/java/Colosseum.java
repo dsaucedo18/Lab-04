@@ -72,6 +72,11 @@ public class Colosseum {
      *         Implement this function.
      */
     public static Pokemon buildPokemon() {
+        System.out.println("What is the name of your Pokemon : ");
+        Scanner pokemonNombre = new Scanner(System.in);
+        String pokeNombre = pokemonNombre.nextLine();
+
+        System.out.println("How many health points will it have: ");
         Scanner hitPoints = new Scanner(System.in);
         int hp = hitPoints.nextInt();
         boolean hpTest = false;
@@ -85,7 +90,7 @@ public class Colosseum {
                 }
             }
         }
-
+        System.out.println("How many attack points will it have: ");
         Scanner attack = new Scanner(System.in);
         int attackPoints = attack.nextInt();
         boolean attackTest = false;
@@ -101,7 +106,7 @@ public class Colosseum {
         }
 
         int defenseTotal = MAX_HIT_POINTS - attackPoints;
-
+        System.out.println("How many defense points will it have: ");
         System.out.println("Your defense points must be between 1 to " + defenseTotal);
         Scanner defense = new Scanner(System.in);
         int defensePoints = defense.nextInt();
@@ -119,7 +124,6 @@ public class Colosseum {
 
         Pokemon tempPokemon = new Pokemon();
         return tempPokemon;
-        return hitPoints;
 
     }
 
