@@ -72,8 +72,55 @@ public class Colosseum {
      *         Implement this function.
      */
     public static Pokemon buildPokemon() {
+        Scanner hitPoints = new Scanner(System.in);
+        int hp = hitPoints.nextInt();
+        boolean hpTest = false;
+        if (hp < 0 || hp > MAX_HIT_POINTS) {
+            while (hpTest = false) {
+                System.out.print("Sorry Hit Points must be between 1 and 50: ");
+                hitPoints = new Scanner(System.in);
+                hp = hitPoints.nextInt();
+                if (hp > 0 && hp < MAX_HIT_POINTS) {
+                    hpTest = true;
+                }
+            }
+        }
+
+        Scanner attack = new Scanner(System.in);
+        int attackPoints = attack.nextInt();
+        boolean attackTest = false;
+        if (attackPoints < 0 || attackPoints > MAX_HIT_POINTS) {
+            while (attackTest = false) {
+                System.out.print("Sorry Atttack Points must be between 1 and 49: ");
+                attack = new Scanner(System.in);
+                attackPoints = attack.nextInt();
+                if (attackPoints > 0 && attackPoints < MAX_HIT_POINTS) {
+                    attackTest = true;
+                }
+            }
+        }
+
+        int defenseTotal = MAX_HIT_POINTS - attackPoints;
+
+        System.out.println("Your defense points must be between 1 to " + defenseTotal);
+        Scanner defense = new Scanner(System.in);
+        int defensePoints = defense.nextInt();
+        boolean defenseTest = false;
+        if (defensePoints < 0 || defensePoints > defenseTotal) {
+            while (defenseTest = false) {
+                System.out.print("Sorry defense Points must be between 1 and " + defenseTotal + " :");
+                defense = new Scanner(System.in);
+                defensePoints = defense.nextInt();
+                if (defensePoints > 0 && hp < MAX_HIT_POINTS) {
+                    attackTest = true;
+                }
+            }
+        }
+
         Pokemon tempPokemon = new Pokemon();
         return tempPokemon;
+        return hitPoints;
+
     }
 
     /**
